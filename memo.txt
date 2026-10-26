@@ -1,0 +1,18 @@
+# Assignment #7: Hospital Intake System
+## Design Memo
+
+For this assignment, I developed two systems using different data structures: a binary tree to organize the hospital's doctor reporting structure and a min-heap priority queue to manage emergency patients based on urgency.
+
+**Doctor Reporting Tree**
+
+I used a binary tree because a hospital's management structure follows a hierarchy where doctors report to other doctors. Each node represents a doctor and can have up to two direct reports. This makes it easier to organize and understand reporting relationships.
+
+I implemented three recursive traversal methods. Preorder traversal visits the parent before its children, which could be useful when hospital management needs to distribute instructions from the top down. Inorder traversal visits the left child, parent, and right child, providing a consistent way to list doctors. Postorder traversal visits the children before their parent, which could help collect reports from individual doctors before passing information to their supervisors.
+
+**Emergency Priority Queue**
+
+For the emergency intake system, I used a min-heap because patients should be treated according to urgency rather than arrival time. Each patient has an urgency score from 1 to 10, with 1 being the most urgent.
+
+The heapify_up method maintains the correct priority after inserting a patient, while heapify_down restores the heap after removing the most urgent patient. Both operations have O(log n) time complexity, making them efficient as patients enter and leave the queue.
+
+I also tested invalid inputs, empty structures, and different urgency levels to verify that both systems work correctly. This assignment helped me understand why choosing the appropriate data structure matters when designing practical software systems.
